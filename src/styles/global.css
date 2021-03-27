@@ -1,0 +1,17 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui;
+  line-height: 1.5em;
+  background-color: white;
+}
+
+.app-wrapper {
+  min-height: calc(100vh - 4em);
+  padding: 2em 0;
+  display: grid;
+  place-items: center;
+}
