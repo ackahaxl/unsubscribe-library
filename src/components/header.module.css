@@ -1,6 +1,6 @@
 header {
   text-align: center;
-  color: #010101;
+  color: #2d2d2d;
   font-family: "Poppins", serif;
 }
 
@@ -12,6 +12,7 @@ header > * + * {
   text-transform: uppercase;
   font-weight: 800;
   letter-spacing: .25em;
+  line-height: 1.25em;
 }
 
 .desc {

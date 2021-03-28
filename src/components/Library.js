@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import confetti from "canvas-confetti";
 import * as styles from "./library.module.css";
-import { MdContentCopy } from "react-icons/md";
+import { MdContentCopy, MdRefresh } from "react-icons/md";
+import copy from 'copy-to-clipboard';
 
 export default function Library() {
   const data = useStaticQuery(graphql`
@@ -19,7 +20,7 @@ export default function Library() {
   `);
 
   const unsubscribeLabels = data.allAirtable.nodes;
-  const randomLabel = () =>
+  let randomLabel = () =>
     unsubscribeLabels[Math.floor(Math.random() * unsubscribeLabels.length)]
       .data;
 
@@ -30,16 +31,26 @@ export default function Library() {
     confetti();
   };
 
+  const copyHandler = (value) => {
+    copy(value, {
+      debug: true,
+      format: 'text/plain',
+      onCopy: () => {
+        console.log(value)
+      }
+    });
+  };
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.box}>
-        <div className={styles.text} key={random.id}>
+        <div className={styles.text} key={random.id} onClick={() => copyHandler(random.label)}>
           {random.label || setRandom(randomLabel)}
         </div>
         <MdContentCopy />
       </div>
       <button className={styles.button} onClick={handleClick}>
-        Get new item
+        Get new item <MdRefresh />
       </button>
     </div>
   );
