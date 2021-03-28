@@ -1,0 +1,20 @@
+header {
+  text-align: center;
+  color: #010101;
+  font-family: "Poppins", serif;
+}
+
+header > * + * {
+  margin-top: 2em;
+}
+
+.title {
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: .25em;
+}
+
+.desc {
+  font-weight: 400;
+  line-height: 1.75em;
+}

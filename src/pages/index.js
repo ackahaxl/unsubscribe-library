@@ -5,7 +5,7 @@ import Library from "../components/Library";
 const Home = ({ data }) => {
   return (
     <div className="app-wrapper">
-      <div>
+      <div className="container">
         <Header />
         <Library />
       </div>

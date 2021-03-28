@@ -179,3 +179,5 @@ sketch
 
 .node-gyp
 public
+# Local Netlify folder
+.netlify

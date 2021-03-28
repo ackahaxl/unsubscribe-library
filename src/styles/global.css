@@ -1,17 +1,35 @@
+:root {
+  --yellow: #F8D293;
+  --peach: #F8C294;
+  --blue: #304B68;
+  --teal: #87CCDC;
+  --green: #BAE99B;
+}
+
 html, body {
   height: 100%;
 }
 
 body {
   margin: 0;
-  font-family: system-ui;
+  font-family: 'Work Sans', system-ui;
   line-height: 1.5em;
+  color: #030303;
   background-color: white;
 }
 
 .app-wrapper {
-  min-height: calc(100vh - 4em);
-  padding: 2em 0;
+  min-height: calc(100vh - 10rem);
+  padding: 5rem 0;
   display: grid;
   place-items: center;
+}
+
+.container {
+  margin: 0 auto;
+  width: clamp(25rem, 45vw, 60rem);
+}
+
+h1, h3 {
+  margin: 0;
 }

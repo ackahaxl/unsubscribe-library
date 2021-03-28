@@ -1,0 +1,67 @@
+.wrapper {
+  position: relative;
+  margin-top: 3rem;
+  display: grid;
+  gap: 2em;
+  place-items: center;
+}
+
+.wrapper > * + * {
+  margin-left: 1em;
+}
+
+.box {
+  position: relative;
+  padding: 1em 0 1em 1.5em;
+  border: 2px solid rgba(53, 55, 70, .5);
+  border-radius: .5em;
+  font-size: 1.15em;
+  display: flex;
+  align-items: center;
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0s
+}
+
+.box svg {
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity .3s cubic-bezier(1,0,0,1), transform .3s cubic-bezier(0.18,0.89,0.32,1.27);
+}
+
+.box > *:last-child {
+  margin-left: 1em;
+}
+
+.text {
+  position: relative;
+  max-width: 360px;
+  text-align: center;
+}
+
+.button {
+  cursor: pointer;
+  position: relative;
+  border: 0;
+  padding: .75em 1.25em;
+  color: white;
+  background: var(--blue);
+  font-size: 1.1em;
+  border-radius: .25em;
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0s
+}
+
+@media(hover:hover) {
+  .box:hover {
+    cursor: pointer;
+    padding-right: 1.5em;
+    background-color: rgba(53, 55, 70, .075);
+  }
+
+  .box:hover svg {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .button:hover {
+    background: rgba(53, 55, 70 / 2.5%);
+  }
+}

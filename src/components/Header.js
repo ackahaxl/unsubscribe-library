@@ -1,5 +1,6 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
+import * as styles from "./header.module.css"
 
 export default function Header() {
   const data = useStaticQuery(graphql`
@@ -21,8 +22,8 @@ export default function Header() {
 
   return (
     <header>
-      <h1>{title}</h1>
-      <h3>{desc}</h3>
+      <h1 className={styles.title}>{title}</h1>
+      <h3 className={styles.desc}>{desc}</h3>
     </header>
   );
 }
