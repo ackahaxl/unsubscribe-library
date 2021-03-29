@@ -43,14 +43,14 @@ export default function Library() {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.box}>
-        <div className={styles.text} key={random.id} onClick={() => copyHandler(random.label)}>
+      <div className={styles.box} role="button" tabIndex="0" key={random.id} onClick={() => copyHandler(random.label)}>
+        <div className={styles.text}>
           {random.label || setRandom(randomLabel)}
         </div>
         <MdContentCopy />
       </div>
       <button className={styles.button} onClick={handleClick}>
-        Get new item <MdRefresh />
+        <MdRefresh />
       </button>
     </div>
   );

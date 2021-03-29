@@ -12,23 +12,24 @@
 
 .box {
   position: relative;
-  padding: 1em 0 1em 1.5em;
-  border: 2px solid rgba(53, 55, 70, .5);
-  border-radius: .5em;
+  padding: .75em 1.25em;
+  border: 2px solid var(--regal-blue);
+  border-radius: 0.5em;
   font-size: 1.15em;
   display: flex;
   align-items: center;
-  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0s
+  width: clamp(200px, 70%, 500px);
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
 }
 
 .box svg {
-  opacity: 0;
-  transform: scale(0);
-  transition: opacity .3s cubic-bezier(1,0,0,1), transform .3s cubic-bezier(0.18,0.89,0.32,1.27);
-}
-
-.box > *:last-child {
-  margin-left: 1em;
+  position: absolute;
+  top: 50%;
+  right: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+  transform: translateY(-50%);
 }
 
 .text {
@@ -40,27 +41,48 @@
   cursor: pointer;
   position: relative;
   border: 0;
-  padding: .75em 1.25em;
-  color: white;
-  background: var(--blue);
-  font-size: 1.1em;
-  border-radius: .25em;
-  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0s
+  padding: 0.5em;
+  color: var(--light-apricot);
+  background: var(--regal-blue);
+  border: 2px solid var(--light-apricot);
+  font-size: 1.5rem;
+  border-radius:4em;
+  transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+  box-shadow: 0 0 0 0 transparent;
+  outline: none;
 }
 
-@media(hover:hover) {
+.button svg {
+  display: block;
+}
+
+@media (min-width: 30em) {
+  .box {
+    padding: 1em 1.5em;
+  }
+  .box svg {
+    opacity: 0;
+    transform: translateY(-50%) scale(0);
+    transition: opacity 0.3s cubic-bezier(1, 0, 0, 1),
+      transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.27);
+  }
+}
+
+@media (hover: hover) {
   .box:hover {
     cursor: pointer;
-    padding-right: 1.5em;
-    background-color: rgba(53, 55, 70, .075);
+    padding: 1em 3.5em 1em 1.5em;
+    background-color: hsl(195deg 100% 21% / 7.5%);
   }
 
   .box:hover svg {
     opacity: 1;
-    transform: scale(1);
+    transform: translateY(-50%) scale(1);
   }
 
   .button:hover {
     background: rgba(53, 55, 70 / 2.5%);
+    transform: scale(1.15);
+    box-shadow: 0 0 0 3px var(--regal-blue);
   }
 }

@@ -1,9 +1,7 @@
 :root {
-  --yellow: #F8D293;
-  --peach: #F8C294;
-  --blue: #304B68;
-  --teal: #87CCDC;
-  --green: #BAE99B;
+  --light-apricot: #FDD0AB;
+  --blue-bayoux: #496D75;
+  --regal-blue: #00526D;
 }
 
 html, body {
@@ -14,8 +12,9 @@ body {
   margin: 0;
   font-family: 'Work Sans', system-ui;
   line-height: 1.5em;
-  color: #4d4d4d;
-  background-color: white;
+  color: var(--regal-blue);
+  background-color: var(--light-apricot);
+  background: url('../images/blob-scene.svg') center/cover;
 }
 
 .app-wrapper {
@@ -27,7 +26,7 @@ body {
 
 .container {
   margin: 0 auto;
-  width: clamp(25rem, 45vw, 60rem);
+  width: clamp(18rem, 40vw, 40rem);
 }
 
 h1, h3 {
