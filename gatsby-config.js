@@ -7,11 +7,11 @@ module.exports = {
         concurrency: 5,
         tables: [
           {
-            baseId: "appVXCWrykOyEj8GT",
+            baseId: process.env.AIRTABLE_BASE_ID,
             tableName: "List of labels"
           },
           {
-            baseId: "appVXCWrykOyEj8GT",
+            baseId: process.env.AIRTABLE_BASE_ID,
             tableName: "Meta"
           }
         ]
@@ -27,7 +27,6 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `work sans\:300,400,700`,
           `Poppins\:400,800`
         ],
         display: 'swap'
