@@ -5,7 +5,7 @@
 }
 
 html, body {
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
@@ -14,7 +14,7 @@ body {
   line-height: 1.5em;
   color: var(--regal-blue);
   background-color: var(--light-apricot);
-  background: url('../images/blob-scene.svg') center/cover;
+  background: url('../images/blob-scene.svg') center/cover no-repeat;
 }
 
 .app-wrapper {
