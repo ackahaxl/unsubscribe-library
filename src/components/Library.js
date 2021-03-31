@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import confetti from "canvas-confetti";
 import * as styles from "./library.module.css";
 import { MdContentCopy, MdRefresh } from "react-icons/md";
-import copy from 'copy-to-clipboard';
+import copy from "copy-to-clipboard";
 
 export default function Library() {
   const data = useStaticQuery(graphql`
@@ -28,28 +28,43 @@ export default function Library() {
 
   const handleClick = () => {
     setRandom(randomLabel);
-    confetti();
+    confetti({
+      colors: ['#FDD0AB', '#496D75', '#00526D'],
+      disableForReducedMotion: true
+    });
   };
 
-  const [copied, setCopied] = useState(false)
+  const [copied, setCopied] = useState(false);
 
   const copyHandler = (value) => {
     copy(value, {
       debug: true,
-      format: 'text/plain',
+      format: "text/plain",
       onCopy: () => {
         setCopied(true);
-    setTimeout(() => {
-      setCopied(false)
-    }, 2000)
-      }
+        confetti({
+          colors: ['#FDD0AB', '#496D75', '#00526D'],
+          disableForReducedMotion: true
+        });
+        setTimeout(() => {
+          setCopied(false);
+        }, 3000);
+      },
     });
   };
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.box} role="button" tabIndex="0" key={random.id} onClick={() => copyHandler(random.label)}>
-        <div className={`${styles.copyText} ${copied ? 'active' : 'hidden'}`}>Copied</div>
+      <div
+        className={styles.box}
+        role="button"
+        tabIndex="0"
+        key={random.id}
+        onClick={() => copyHandler(random.label)}
+      >
+        <div className={`${styles.copyText} ${!copied ? "hidden" : ""}`}>
+          Copied !!
+        </div>
         <div className={styles.text}>
           {random.label || setRandom(randomLabel)}
         </div>
