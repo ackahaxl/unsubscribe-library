@@ -31,12 +31,17 @@ export default function Library() {
     confetti();
   };
 
+  const [copied, setCopied] = useState(false)
+
   const copyHandler = (value) => {
     copy(value, {
       debug: true,
       format: 'text/plain',
       onCopy: () => {
-        console.log(value)
+        setCopied(true);
+    setTimeout(() => {
+      setCopied(false)
+    }, 2000)
       }
     });
   };
@@ -44,6 +49,7 @@ export default function Library() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.box} role="button" tabIndex="0" key={random.id} onClick={() => copyHandler(random.label)}>
+        <div className={`${styles.copyText} ${copied ? 'active' : 'hidden'}`}>Copied</div>
         <div className={styles.text}>
           {random.label || setRandom(randomLabel)}
         </div>

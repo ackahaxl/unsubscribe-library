@@ -16,6 +16,7 @@
   align-items: center;
   justify-content: center;
   width: clamp(240px, 70%, 500px);
+  outline: none;
   transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
 }
 
@@ -92,4 +93,20 @@
     transform: scale(1.15);
     box-shadow: 0 0 0 3px var(--regal-blue);
   }
+}
+
+
+.copyText {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+  color: var(--light-apricot);
+  background-color: var(--regal-blue);
+  transition: all 1s cubic-bezier(0.18, 0.89, 0.32, 1.27) 0s;
 }
