@@ -17,7 +17,12 @@
   justify-content: center;
   width: clamp(240px, 70%, 500px);
   outline: none;
+  opacity: 0;
   transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+}
+
+.box :global {
+  animation: fadeIn 1s cubic-bezier(0.075, 0.82, 0.165, 1) 1.5s forwards;
 }
 
 .box svg {
@@ -48,6 +53,11 @@
   transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
   box-shadow: 0 0 0 0 transparent;
   outline: none;
+  opacity: 0;
+}
+
+.button :global {
+  animation: fadeIn 1s cubic-bezier(0.075, 0.82, 0.165, 1) 2s forwards;
 }
 
 .button svg {

@@ -1,4 +1,5 @@
 header {
+  position: relative;
   text-align: center;
   font-family: "Poppins", serif;
 }
@@ -13,9 +14,20 @@ header > * + * {
   letter-spacing: .25em;
   line-height: 1.25em;
   text-shadow: 2px 2px 0 var(--light-apricot);
+
+  opacity: 0;
+}
+
+.title :global {
+  animation: fadeIn 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s forwards;
 }
 
 .desc {
   font-weight: 400;
   line-height: 1.5em;
+  opacity: 0;
+}
+
+.desc :global {
+  animation: fadeIn 1s cubic-bezier(0.075, 0.82, 0.165, 1) 1s forwards;
 }
