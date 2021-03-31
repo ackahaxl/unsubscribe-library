@@ -9,7 +9,7 @@
 .box {
   position: relative;
   padding: .75em 2.5em .75em 1.25em;
-  border: 2px solid var(--regal-blue);
+  border: 2.5px solid var(--regal-blue);
   border-radius: 0.5em;
   font-size: 1.15em;
   display: flex;

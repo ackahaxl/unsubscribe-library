@@ -71,6 +71,7 @@ export default function Library() {
         <MdContentCopy />
       </div>
       <button className={styles.button} onClick={handleClick}>
+        <span className="vh">Reload</span>
         <MdRefresh />
       </button>
     </div>
