@@ -3,6 +3,7 @@ import Header from "../components/Header"
 import Library from "../components/Library"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import Layout from "@components/Layout"
 
 const Home = () => {
   const data = useStaticQuery(graphql`
@@ -32,10 +33,10 @@ const Home = () => {
           <title>{title}</title>
           <meta name="Description" content={desc}></meta>
         </Helmet>
-      <div className="container">
+      <Layout>
         <Header title={title} desc={desc} />
         <Library />
-      </div>
+      </Layout>
     </div>
   );
 };

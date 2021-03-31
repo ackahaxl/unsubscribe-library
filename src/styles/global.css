@@ -47,6 +47,12 @@ h1, h3 {
   width: 1px;
 }
 
+.four-oh-four {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
